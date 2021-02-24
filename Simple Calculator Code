@@ -1,0 +1,159 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int options();
+int again();
+void bye();
+void error();
+void sum();
+void sub();
+void mul();
+void divition();
+
+void main()
+{
+    while (1)
+    {
+        int n, o;
+        n = options();
+        if (n == 1)
+        {
+            sum();
+            o = again();
+            if (o == 1)
+            {
+                continue;
+            }
+            else if (o == 0)
+            {
+                bye();
+            }
+            else
+            {
+                error();
+            }
+        }
+        else if (n == 2)
+        {
+            sub();
+            o = again();
+            if (o == 1)
+            {
+                continue;
+            }
+            else if (o == 0)
+            {
+                bye();
+            }
+            else
+            {
+                error();
+            }
+        }
+        else if (n == 3)
+        {
+            mul();
+            o = again();
+            if (o == 1)
+            {
+                continue;
+            }
+            else if (o == 0)
+            {
+                bye();
+            }
+            else
+            {
+                error();
+            }
+        }
+        else if (n == 4)
+        {
+            divition();
+            o = again();
+            if (o == 1)
+            {
+                continue;
+            }
+            else if (o == 0)
+            {
+                bye();
+            }
+            else
+            {
+                error();
+            }
+        }
+        else if (n == 0)
+        {
+            bye();
+        }
+    }
+}
+
+int options()
+{
+    int n;
+    printf("\nChoose an operation\n");
+    printf("1. Summation\n");
+    printf("2. Subtraction\n");
+    printf("3. Multiplication\n");
+    printf("4. Divition\n");
+    printf("0. Exit\n");
+    printf("Enter your choice: ");
+    scanf("%d", &n);
+    return n;
+}
+
+int again()
+{
+    int o;
+    printf("\nEnter \" 1 \" to calculate again.\n");
+    printf("Else \" 0 \" to Exit.\n");
+    scanf("%d", &o);
+    return o;
+}
+
+void bye()
+{
+    printf("\nSee you again :)\n");
+    exit(0);
+}
+
+void error()
+{
+    printf("\nERROR. Force close :(");
+    exit(0);
+}
+
+void sum()
+{
+    double a, b, x;
+    printf("\nEnter the two numbers: ");
+    scanf("%lf %lf", &a, &b);
+    printf("\nSum = %.2lf\n", a + b);
+}
+
+void sub()
+{
+    double a, b, x;
+    printf("\nEnter the two numbers: ");
+    scanf("%lf %lf", &a, &b);
+    printf("\nSum = %.2lf\n", a - b);
+}
+
+void mul()
+{
+    double a, b, x;
+    printf("\nEnter the two numbers: ");
+    scanf("%lf %lf", &a, &b);
+    printf("\nSum = %.2lf\n", a * b);
+}
+
+void divition()
+{
+    double a, b, x;
+    printf("\nEnter the two numbers: ");
+    scanf("%lf %lf", &a, &b);
+    printf("\nSum = %.2lf\n", a / b);
+}
